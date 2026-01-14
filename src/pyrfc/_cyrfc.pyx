@@ -3212,7 +3212,7 @@ cdef wrapVariable(
                 raise wrapError(&errorInfo)
             value_str = wrapString(stringValue, -1, config & _MASK_RSTRIP)
             try:
-                return Decimal()
+                return Decimal(value_str)
             except:
                 return value_str
         finally:
